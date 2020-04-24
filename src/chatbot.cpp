@@ -50,6 +50,7 @@ ChatBot::ChatBot(const ChatBot &source) {
     std::cout << "ChatBot copy constructor" << std::endl;
 
     _chatLogic = source._chatLogic;
+    _chatLogic->SetChatbotHandle(this);
     _rootNode = source._rootNode;
     _currentNode = source._currentNode;
 
@@ -67,6 +68,7 @@ ChatBot &ChatBot::operator=(const ChatBot &source) {
     delete _image;
 
     _chatLogic = source._chatLogic;
+    _chatLogic->SetChatbotHandle(this);
     _rootNode = source._rootNode;
     _currentNode = source._currentNode;
 
@@ -80,6 +82,7 @@ ChatBot::ChatBot(ChatBot &&source) noexcept {
     std::cout << "ChatBot move constructor" << std::endl;
 
     _chatLogic = source._chatLogic;
+    _chatLogic->SetChatbotHandle(this);
     _rootNode = source._rootNode;
     _currentNode = source._currentNode;
     _image = source._image;
@@ -101,6 +104,7 @@ ChatBot &ChatBot::operator=(ChatBot &&source) noexcept {
     delete _image;
 
     _chatLogic = source._chatLogic;
+    _chatLogic->SetChatbotHandle(this);
     _rootNode = source._rootNode;
     _currentNode = source._currentNode;
     _image = source._image;
@@ -146,7 +150,7 @@ void ChatBot::ReceiveMessageFromUser(std::string message)
     }
 
     // tell current node to move chatbot to new node
-    _currentNode->MoveChatbotToNewNode(newNode);
+    _currentNode->MoveChatBotToNewNode(newNode);
 }
 
 void ChatBot::SetCurrentNode(GraphNode *node)
