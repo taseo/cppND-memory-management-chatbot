@@ -68,7 +68,7 @@ private:
     void OnEnter(wxCommandEvent &WXUNUSED(event));
 
 public:
-    // constructor / desctructor
+    // constructor / destructor
     ChatBotFrame(const wxString &title);
 };
 
@@ -79,7 +79,7 @@ class ChatBotFrameImagePanel : public wxPanel
     wxBitmap _image;
 
 public:
-    // constructor / desctructor
+    // constructor / destructor
     ChatBotFrameImagePanel(wxFrame *parent);
 
     // events

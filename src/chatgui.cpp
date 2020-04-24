@@ -88,7 +88,7 @@ void ChatBotFrameImagePanel::paintNow()
 
 void ChatBotFrameImagePanel::render(wxDC &dc)
 {
-    // load backgroud image from file
+    // load background image from file
     wxString imgFile = imgBasePath + "sf_bridge.jpg";
     wxImage image;
     image.LoadFile(imgFile);
@@ -131,14 +131,7 @@ ChatBotPanelDialog::ChatBotPanelDialog(wxWindow *parent, wxWindowID id)
     //// EOF STUDENT CODE
 }
 
-ChatBotPanelDialog::~ChatBotPanelDialog()
-{
-    //// STUDENT CODE
-    ////
-
-    ////
-    //// EOF STUDENT CODE
-}
+ChatBotPanelDialog::~ChatBotPanelDialog() { }
 
 void ChatBotPanelDialog::AddDialogItem(wxString text, bool isFromUser)
 {
